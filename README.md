@@ -97,6 +97,11 @@ gulp.task('default', function() {
 * 結合したファイルを開くと、指定順に結合されています
 
 ```js:all.min.js
+
+/*! jQuery v3.7.1 | (c) OpenJS Foundation and other contributors | jquery.org/license */
+!function(e,t){"use strict";"object"==typeof module&&"object"==typeof module.exports?module.exports=e.document?t(e,!0):function(e){if(!e.document)throw new Error("jQuery requires a window with a document");return t(e)}:t(e)}
+
+/***** 中略 *****/
 console.log('load js2.js');
 
 function js2() {
@@ -109,23 +114,18 @@ $(function() {
 });
 
 
-/*! jQuery v3.7.1 | (c) OpenJS Foundation and other contributors | jquery.org/license */
-!function(e,t){"use strict";"object"==typeof module&&"object"==typeof module.exports?module.exports=e.document?t(e,!0):function(e){if(!e.document)throw new Error("jQuery requires a window with a document");return t(e)}:t(e)}
-
-/***** 中略 *****/
-
 console.log('load js1.js');
 
 function js1() {
 	console.log('called js1');
-	js2();
-
 }
 
 $(function() {
 	console.log('jquery.ready() in js1.js');
 });
-js1();
+
+console.log('js1.js call js2');
+js2();
 
 ```
 
